@@ -20,6 +20,7 @@ def count_notes():
     
 save_note("Azure", "AZ104")
 save_note("Git", "Hub")
+save_note("SQL", "Database")
 read_notes()
 total = count_notes()
 print(f"Total notes: {total}")
