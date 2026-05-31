@@ -1,0 +1,5 @@
+The first goal is to be good in python
+The second goal is to be good in Gir
+The third goal is to be good with SQL
+The fourth goal is to be good in Azure
+The fifth goal is to be good in AI Engineering
