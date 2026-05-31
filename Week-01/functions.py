@@ -41,3 +41,9 @@ def plan_hours(daily, weeks):
     return daily * 7 * weeks
 plan_hours = plan_hours(2, 10)
 print(plan_hours)
+
+def full_greeting(name, role):
+    return f"Hello {name}, welcome to {role}"
+
+greeting = full_greeting("Wonderful", "AI Engineering")
+print(greeting)
