@@ -40,4 +40,4 @@ result = get_valid_number("Pick a number: ", 1, 10)
 print(f"You picked = {result}")
 
 
-   
+ ## the errors file was me trying to understand what error handling was all about  
