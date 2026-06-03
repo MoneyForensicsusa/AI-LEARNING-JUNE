@@ -2,9 +2,13 @@ import requests
 
 def get_github_user(username):
     url = f"https://api.github.com/users/{username}"
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
+    except requests.exceptions.ConnectionError:
+        return f"Network error - check your connection"
+    
     if response.status_code != 200:
-        return f"(Error: status code {response.status_code})"
+        return f"Error: status code {response.status_code}"
 
     data = response.json()
     return {
@@ -13,6 +17,14 @@ def get_github_user(username):
         "followers": data.get("followers", 0)
     }
 
-user = get_github_user("MoneyForensicsusa")
-print(user)
-print(f"Repos: {user['public_repos']}, Followers: {user['followers']}")
+usernames = ["torvalds","MoneyForensicsusa", "gssu"]
+
+for username in usernames:
+    user = get_github_user(username)
+    if isinstance(user, dict):
+         print(f"Name:    {user['name']}")
+         print(f"Repos:    {user['public_repos']}")
+         print(f"Followers:    {user['followers']}")
+    else:
+        print(user)
+    print("-------")
